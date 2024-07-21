@@ -1,0 +1,59 @@
+.container{
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 9.2rem;
+    height: 100vh;
+    align-items: center;
+    background-color: var(--input-background);
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 90%;
+}
+.divident{
+    margin-top: 2rem;
+    display: block;
+    width: 90%;
+    height: 0.2rem;
+    background-color: var(--text-faded);
+}
+
+.navBlock{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.navItem,
+.logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 1rem;
+    background-color: var(--background);
+    border: none;
+}
+.navItem  svg, .logout svg{
+    width: 2rem;
+    height: 2rem;
+    transition: background-color 400ms ease;
+}
+.active .navItem,
+.logout:active{
+    background-color: var(--primary);
+}
+
+.active .navItem svg,
+.active .navItem img{
+    fill: white;
+    filter: brightness(0) invert(1); /* для img */
+}
+
+.logout{
+    position: absolute;
+    bottom: 1rem;
+}

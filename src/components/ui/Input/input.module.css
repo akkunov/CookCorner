@@ -1,0 +1,16 @@
+.inputContainer{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.icon{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.icon svg{
+    width: 2.5rem;
+    height: 2.5rem;
+}

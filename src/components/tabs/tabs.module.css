@@ -1,0 +1,37 @@
+.tabsContainer {
+    display: flex;
+    flex-direction: column;
+}
+.tabsTitle{
+    font-family: Poppins;
+    font-size: var(--x);
+    font-weight: 500;
+}
+.tabsNav {
+    margin: 3rem 0rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+}
+
+.tab{
+    font-weight: 300;
+}
+.tab,
+.activeTab{
+    font-family: Poppins;
+    font-size: var(--m);
+    line-height: 17px;
+    text-align: left;
+}
+
+.activeTab {
+    font-weight: 500;
+}
+
+.tabContent {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}

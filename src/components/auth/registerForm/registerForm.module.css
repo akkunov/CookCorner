@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.email,
+.login,
+.password,
+.submit{
+    font-size: var(--m);
+    width: 48rem;
+    height: 5.6rem;
+    padding: 0rem 2.4rem;
+    border-radius: 4rem;
+    justify: space-between;
+    border: none;
+    background-color: var(--input-background);
+}
+.submit{
+    text-align: center;
+    background-color: var(--primary);
+}
+.container li,.error{
+    font-family: Poppins, sans-serif;
+    font-size: var(--s);
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    color: rgba(118, 118, 118, 1);
+}
+.container li.success{
+    color: #28a745;
+}
+.error{
+    color: #ff5656;
+    margin-left: .5rem;
+}
+
+@media (max-width: 565px) {
+    .email,
+    .login,
+    .password,
+    .submit{
+        width: 80vw;
+        height:4.5rem;
+    }
+}
