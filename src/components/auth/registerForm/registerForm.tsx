@@ -2,12 +2,12 @@ import {FC, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './registerForm.module.css';
 import {CiUser} from "react-icons/ci";
-import {IRegister} from "../index";
+import {IRegister} from "../../../global";
 import Input from "../../ui/Input";
 import {MdOutlineAlternateEmail} from "react-icons/md";
 
 interface IRegisterForm {
-    submit : (data) => void
+    submit : (data:IRegister) => void
 }
 interface ICriteria {
     length: boolean,
@@ -23,7 +23,7 @@ const  RegisterForm:FC<IRegisterForm> = ({submit}) =>  {
         mode: "onChange"
     });
 
-    const [criteria, setCriteria] = useState<object ,ICriteria>({
+    const [criteria, setCriteria] = useState<ICriteria>({
         length: false,
         uppercase: false,
         lowercase: false,
@@ -31,7 +31,7 @@ const  RegisterForm:FC<IRegisterForm> = ({submit}) =>  {
         specialChar: false,
     });
 
-    const validatePassword = (password) => {
+    const validatePassword = (password:string) => {
         const length = password.length >= 8 && password.length <= 15;
         const uppercase = /[A-Z]/.test(password);
         const lowercase = /[a-z]/.test(password);
@@ -48,7 +48,6 @@ const  RegisterForm:FC<IRegisterForm> = ({submit}) =>  {
         return length && uppercase && lowercase && number && specialChar;
     };
 
-    // Обработчик отправки формы
     const onSubmit = async data => {
         if (data.password !== data.repeatPassword) {
             setError('repeatPassword', { type: 'manual', message: 'Пароли не совпадают' });

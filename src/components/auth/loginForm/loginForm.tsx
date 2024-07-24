@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import styles from './loginForm.module.css';
-import {ILogin} from "../index.ts";
+import {ILogin} from "../../../global";
 
 interface ILoginForm{
-    submit: (data) => void;
+    submit: (data:ILogin) => void;
 }
 const LoginForm :FC<ILoginForm> = ({submit}) =>  {
     const { register, handleSubmit, formState:{errors} } = useForm <ILogin> ({

@@ -5,9 +5,8 @@ import {Link} from "react-router-dom";
 
 
 
-function Login(props) {
+function Login() {
     async function submit(data){
-
     }
     return (
         <>

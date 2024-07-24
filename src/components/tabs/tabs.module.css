@@ -1,11 +1,21 @@
 .tabsContainer {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.tabUserName{
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: var(--x);
+    color: var(--text-color);
 }
 .tabsTitle{
     font-family: Poppins;
     font-size: var(--x);
     font-weight: 500;
+    margin-top: 6rem;
 }
 .tabsNav {
     margin: 3rem 0rem;
@@ -30,8 +40,27 @@
 }
 
 .tabContent {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(20rem, 1fr));
+    overflow-y: auto;
 }
+
+@media (max-width: 1200px) {
+    .tabContent{
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(14rem, 1fr));
+    }
+}
+
+@media (max-width: 962px) {
+    .tabContent{
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(21vw, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+}
+

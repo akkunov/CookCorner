@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
 import styles from './input.module.css';
 
@@ -9,6 +9,7 @@ interface InputProps {
     error?: FieldError;
     className?: string;
     icon?: React.ReactNode;
+    children:React.ReactNode;
 }
 
 const Input: FC<InputProps> = ({ type, register, placeholder, error, className, icon }) => {

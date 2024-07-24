@@ -11,15 +11,16 @@ html{
     --text-color: #343434;
     --text-faded: #666666;
     --input-background: #EDEDED;
-    --background: #FAFAFA;
+    --background: #fafafa;;
 
     --s: 1.4rem;
     --m: 1.6rem;
     --xs:1.8rem;
     --x:2.4rem;
-
 }
-
+.root{
+    overflow: hidden;
+}
 
 @font-face {
     font-family: "Poppins", sans-serif;

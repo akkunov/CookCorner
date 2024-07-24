@@ -1,14 +1,14 @@
-import React from 'react';
 import styles from './register.module.css'
 import {Link} from "react-router-dom";
 import RegisterForm from "../../../components/auth/registerForm/registerForm";
+import {FC} from "react";
+// import {IRegister} from "../../../components/auth";
 
 
 
-function Register(props) {
+const Register:FC  = () =>  {
 
-
-    async function submit(data){
+     function submit( ){
 
     }
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './toggler.module.css';
 
 const SearchToggler: React.FC = () => {
@@ -30,18 +30,13 @@ const SearchToggler: React.FC = () => {
                     Recepts
                 </button>
             </div>
+
+
             <input
                 type="text"
                 placeholder={`Search ${activeTab}`}
                 className={styles.searchInput}
             />
-            <div className={styles.results}>
-                {activeTab === 'chef' ? (
-                    <div>Searching Chefs</div>
-                ) : (
-                    <div>Searching Recepts</div>
-                )}
-            </div>
         </div>
     );
 };

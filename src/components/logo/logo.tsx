@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import logo from '../../assets/icon/logo.svg'
-const  Logo:FC <void> = () =>  {
+const  Logo:FC = () =>  {
     return (
         <img src={logo} alt="logo"/>
     );

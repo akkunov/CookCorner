@@ -36,6 +36,7 @@
     border-radius: 1rem;
     background-color: var(--background);
     border: none;
+    padding: 0;
 }
 .navItem  svg, .logout svg{
     width: 2rem;
