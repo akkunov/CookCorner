@@ -17,7 +17,7 @@ interface IMeal {
 const ShadowMealCard:FC<IMeal> = (props) =>  {
     const {imgUrl, name,author,saved,liked,id} = props
     return (
-        // <Link to={`meals/${id}`}>
+        <Link to={`meals/${id}`}>
             <div className={styles.wrapper}>
                 <div className={styles.imgWrapper}>
                     <img src={imgUrl} alt="img" className={styles.img}/>
@@ -34,7 +34,7 @@ const ShadowMealCard:FC<IMeal> = (props) =>  {
                     </div>
                 </div>
             </div>
-        // </Link>
+        </Link>
 
     );
 }

@@ -6,7 +6,8 @@ import {Link} from "react-router-dom";
 
 
 function Login() {
-    async function submit(data){
+    async function submit(){
+
     }
     return (
         <>
@@ -18,8 +19,6 @@ function Login() {
                            <h1 className={styles.title}>Welcome Back To</h1>
                             <span className={styles.boldTitle}>CooksCorner</span>
                         </span>
-
-
                     </div>
                     <div className={styles.registerContainer}>
                         <LoginForm submit={submit}/>

@@ -9,7 +9,7 @@ interface InputProps {
     error?: FieldError;
     className?: string;
     icon?: React.ReactNode;
-    children:React.ReactNode;
+    children?:React.ReactNode;
 }
 
 const Input: FC<InputProps> = ({ type, register, placeholder, error, className, icon }) => {

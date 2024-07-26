@@ -1,0 +1,11 @@
+.optionInfo{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    align-items: center;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: var(--s);
+    color: var(--background);
+}

@@ -1,6 +1,6 @@
-import {Navigate, NavLink, Outlet, useNavigate} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 import styles from './tabs.module.css';
-import {FC, useEffect} from "react";
+import {FC} from "react";
 import MealCard from "../cards/mealCard/mealCard";
 import ShadowMealCard from "../cards/shadowMealCard/shadowMealCard";
 
@@ -72,11 +72,7 @@ export const Category3 = () => {
 
 
 const Tabs:FC = () => {
-    const navigate = useNavigate()
     const activeClass = ({isActive}: {isActive: boolean}):string => isActive ? styles.activeTab : styles.tab;
-    useEffect(() => {
-        navigate('breakfast')
-    },[])
     return (
         <div className={styles.tabsContainer}>
             <span className={styles.tabUserName}>Hi, Sarthak. UI Designer & Cook</span>

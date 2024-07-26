@@ -1,7 +1,8 @@
 import {FC} from 'react';
 import styles from './search.module.css';
 import SearchToggler from "../../components/serachToggle/toggler";
-import {Category2} from "../../components/tabs/tabs";
+
+import CardRender from "../../components/cards/renderCards/cardRender";
 
 
 const Search:FC = () =>  {
@@ -11,9 +12,7 @@ const Search:FC = () =>  {
                 <SearchToggler />
                 <span className={styles.result}>Results</span>
             <div className={styles.resultContent}>
-                <Category2 />
-                <Category2 />
-                <Category2 />
+                <CardRender />
             </div>
         </div>
 

@@ -48,7 +48,7 @@ const  RegisterForm:FC<IRegisterForm> = ({submit}) =>  {
         return length && uppercase && lowercase && number && specialChar;
     };
 
-    const onSubmit = async data => {
+    const onSubmit = async (data:IRegister) => {
         if (data.password !== data.repeatPassword) {
             setError('repeatPassword', { type: 'manual', message: 'Пароли не совпадают' });
             return;
