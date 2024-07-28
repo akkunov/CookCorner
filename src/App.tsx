@@ -15,7 +15,8 @@ import Main from "./pages/main/main";
 import Search from "./pages/search/search";
 import Profile from "./pages/profile/profile";
 
-import MealDetail from "./pages/detail/mealDetail";
+const MealDetail = lazy(() => import ("./pages/detail/mealDetail"))
+
 const Saved = lazy(() =>import  ("./pages/profile/saved/saved"))
 const MyRecipe = lazy(() =>import  ("./pages/profile/myRecipe/myRecipe"))
 const Author = lazy(() =>import  ("./pages/profile/author/author"))
