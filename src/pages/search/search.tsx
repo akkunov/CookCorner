@@ -1,18 +1,23 @@
-import {FC} from 'react';
+import {FC, lazy,Suspense} from 'react';
 import styles from './search.module.css';
-import SearchToggler from "../../components/serachToggle/toggler";
+const SearchToggler  = lazy(() => import ("../../components/serachToggle/toggler"))
 
-import CardRender from "../../components/cards/renderCards/cardRender";
+const CardRender = lazy(() => import ("../../components/cards/renderCards/cardRender"))
 
 
 const Search:FC = () =>  {
     return (
         <div className={styles.wrapper}>
                 <h1 className={styles.title}>What to eat today?</h1>
-                <SearchToggler />
+                <Suspense fallback={'loading ...'}>
+                    <SearchToggler />
+                </Suspense>
+
                 <span className={styles.result}>Results</span>
             <div className={styles.resultContent}>
-                <CardRender />
+                <Suspense fallback={'loading ...'}>
+                    <CardRender />
+                </Suspense>
             </div>
         </div>
 

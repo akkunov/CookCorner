@@ -1,8 +1,8 @@
-import {FC} from 'react';
+import {FC, lazy,Suspense} from 'react';
 import styles from './profile.module.css';
 import {NavLink, Outlet} from "react-router-dom";
-import UserHeaderInfo from "../../components/profileC/userHeaderInfo/userHeaderInfo";
-import UserProfileImg from "../../components/profileC/userProfileImg/userProfileImg";
+const UserHeaderInfoLazy = lazy(() => import ("../../components/profileC/userHeaderInfo/userHeaderInfo"));
+const UserProfileImg = lazy(() => import ("../../components/profileC/userProfileImg/userProfileImg"));
 
 
 const Profile:FC = () =>  {
@@ -12,9 +12,14 @@ const Profile:FC = () =>  {
             <div className={styles.profile}>
                     <div className={styles.profileT}>Profile</div>
                     <div className={styles.profileContainer}>
-                        <UserProfileImg className={styles.profileImgContainer} />
+                        <Suspense fallback={'...loading'}>
+                            <UserProfileImg className={styles.profileImgContainer} />
+                        </Suspense>
+
                         <div className={styles.userInfo}>
-                            <UserHeaderInfo />
+                            <Suspense fallback={'...loading'}>
+                                <UserHeaderInfoLazy />
+                            </Suspense>
                             <div className={styles.userName}>Sarthak Ranjan Hota</div>
                             <div className={styles.userBio}>I'm a passionate chef who loves creating delicious dishes with flair.</div>
                             <button className={styles.manageProfile}>Manage Profile</button>
@@ -27,7 +32,9 @@ const Profile:FC = () =>  {
                     <NavLink to={"savedRecipe"} className={activeClass}>Saved recipe</NavLink>
                 </div>
                 <div className={styles.contentContainer}>
+                    <Suspense fallback={'... loading'}>
                         <Outlet />
+                    </Suspense>
                 </div>
             </div>
         </div>
