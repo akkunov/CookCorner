@@ -50,7 +50,11 @@ const App:FC = () =>  {
                    </Suspense>} />
                </Route>
 
-               <Route path={'/detail/:id'} element={<MealDetail />} />
+               <Route path={'/detail/:id'} element={
+                   <Suspense fallback={'loading ...'}>
+                       <MealDetail />
+                   </Suspense>
+                   } />
                <Route path={'/author/:id'}
                       element={<Suspense fallback={'loading ...'}>
                             <Author />
