@@ -14,8 +14,8 @@ export const loginUser = createAsyncThunk(
             }
             return response.data
             
-        }catch (e) {
-            return rejectWithValue(e.response)
+        }catch (e:any) {
+            return rejectWithValue(e)
         }
     }
 )
@@ -36,8 +36,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        start: (state) => {
-            state.value += 1
+        start: () => {
         }
     },
     extraReducers: (builder) => {

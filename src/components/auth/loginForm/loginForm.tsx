@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import styles from './loginForm.module.css';
-import {ILogin} from "../../../global";
+import {ILogin} from "../../../store/user/types";
 
 interface ILoginForm{
     submit: (data:ILogin) => void;

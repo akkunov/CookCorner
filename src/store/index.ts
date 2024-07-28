@@ -1,6 +1,6 @@
 import {configureStore} from "@reduxjs/toolkit";
 import userReducer from './user/userSlice';
-import mealReducer from './user/userSlice';
+import mealReducer from './meal/mealSlice';
 
 
 export  const store = configureStore({

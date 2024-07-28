@@ -2,9 +2,9 @@ import {FC, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './registerForm.module.css';
 import {CiUser} from "react-icons/ci";
-import {IRegister} from "../../../global";
 import Input from "../../ui/Input";
 import {MdOutlineAlternateEmail} from "react-icons/md";
+import {IRegister} from "../../../global";
 
 interface IRegisterForm {
     submit : (data:IRegister) => void

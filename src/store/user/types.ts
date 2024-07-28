@@ -1,7 +1,8 @@
-import {IMeal} from "../../global";
+import {IMeal} from "../meal/types";
+
 
 export interface ILogin {
-    username: string;
+    gmail: string;
     password: string;
 }
 

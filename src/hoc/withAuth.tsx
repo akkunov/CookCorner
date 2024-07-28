@@ -9,7 +9,7 @@ interface IProps{
 const WithAuth:FC<IProps> = ({ children }) => {
     const {user} = useAppSelector((state) => state);
 
-    const isAuth = !!user.id && !!user.token
+    const isAuth = !!user?.user?.user.id && !!user?.user?.token
     const navigate = useNavigate();
 
     useEffect(() => {

@@ -5,6 +5,8 @@ import * as userActions from '../store/user/userSlice';
 import * as mealActions from '../store/user/userSlice';
 
 const actions = {...userActions, mealActions}
+
+
 export const useActions= () =>{
     const dispatch  = useAppDispatch();
     return useMemo(() =>{
