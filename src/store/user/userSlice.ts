@@ -1,22 +1,16 @@
-import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { UserService } from './userService';
-import {errorResponse, ILogin, ILoginResponse} from './types';
+import {ILogin, ILoginResponse} from './types';
 
 
-
-export const loginUser = createAsyncThunk(
+export const loginUser = createAsyncThunk<ILoginResponse, ILogin, {rejectValue:string}>(
     'users/loginUser',
-    async (data:ILogin, {rejectWithValue}) => {
-        try {
+    async (data, {rejectWithValue}) => {
             const response = await UserService.login(data);
             if (response.status !==200){
-                throw new Error('error response')
+                return rejectWithValue('error response')
             }
-            return response.data
-            
-        }catch (e:any) {
-            return rejectWithValue(e)
-        }
+            return response.data as ILoginResponse;
     }
 )
 
@@ -35,23 +29,20 @@ const initialState: userState = {
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {
-        start: () => {
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(loginUser.pending, (state:userState) => {
+            .addCase(loginUser.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(loginUser.fulfilled, (state:userState, action:PayloadAction<ILoginResponse>) => {
+            .addCase(loginUser.fulfilled, (state, action) => {
                 state.loading = false;
                 state.user = action.payload;
             })
-            .addCase(loginUser.rejected, (state:userState, action:PayloadAction<errorResponse>) => {
+            .addCase(loginUser.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message || 'Failed to login';
+                state.error = action.payload || 'Failed to login';
             });
     },
 

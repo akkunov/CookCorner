@@ -3,14 +3,19 @@ export interface IUser {
     name:string;
     id?:string;
     gmail:string;
-    password:string;
+    password?:string;
     accessToken?: string | undefined;
     refreshToken?:string | undefined;
     phone?:string|undefined;
-    repeatPassword:string
 }
 
-export type IRegister = Pick<IUser, 'name' | 'gmail'| 'password' | 'repeatPassword'>;
+export type IRegister = {
+    name:string,
+    gmail:string,
+    password:string,
+    repeatPassword:string,
+};
+
 // export type ILogin  =  Pick<IUser, 'gmail' | 'password'>;
 //
 //
