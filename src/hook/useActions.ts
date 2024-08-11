@@ -2,7 +2,7 @@
 // import {useMemo} from "react";
 // import {bindActionCreators} from "@reduxjs/toolkit";
 // import * as userActions from '../store/user/userSlice';
-// import * as mealActions from '../store/user/userSlice';
+// import * as mealActions from '../store/meal/mealSlice';
 //
 // const actions = {...userActions, mealActions}
 //
